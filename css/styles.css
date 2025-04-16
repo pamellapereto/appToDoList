@@ -1,0 +1,71 @@
+html {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppings", sans-serif;
+}
+
+body {
+    background-color: #0c0e10;
+}
+
+.titulo {
+    color: #FFF;
+    text-align: center;
+}
+
+.campo-tarefa {
+    border: solid 2px #808080;
+    background-color: transparent;
+    border-radius: 15px;
+    padding: 10px;
+    color: #FFF;
+    font-size: 16px;
+}
+
+.lista-tarefas {
+    list-style: none;
+}
+
+.item-tarefa {
+    color: #FFF;
+    font-size: 20px;
+}
+
+.descricao-item {
+    color: #808080;
+}
+
+#addIcon {
+    color: #FFF;
+}
+
+.containerTask {
+    
+}
+
+.removeTasksButton {
+    background-color: transparent;
+    border: solid 1px #ff0000;
+    border-radius: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.containerRemoveActions {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+}
+
+#removeIcon {
+    color: #ff0000;
+}
+
+.botao-adicionar {
+    background-color: #31c231;
+    color: #FFF;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+}

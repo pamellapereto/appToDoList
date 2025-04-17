@@ -6,66 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <!-- só para dar mais vida colocando icones de exclusão e adição para as tarefas -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- Font de textos para tirar a serifa deles e deixar mais bonitinha -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <!-- <link rel="shortcut icon" type="imagex/png" href=""> Vai q em algum momento da vd eu queira esse icone ne -->
+
+    <!-- iconezinho na pagina só pra deixar mais bonitinho msm -->
+    <link rel="shortcut icon" type="imagex/png" href="./assets/images/icone-pagina-lista.png">
     <title>To-Do List</title>
 </head>
 
 <body>
     <h1 class="titulo">To-Do List</h1>
     <!-- campos para adicionar nova tarefa -->
-    <div>
-        <input placeholder="Nova Tarefa" class="campo-tarefa" type="text">
-        <button class="botao-adicionar" type="submit">
-            Adicionar
-            <!-- iconezinho para deleção da tarefa/task -->
-            <i id="addIcon" class="fa-solid fa-plus"></i>
-        </button>
-    </div>
+    <div class="container">
+        <div class="container-input">
+            <input placeholder="Nova Tarefa" class="campo-tarefa" type="text">
+            <button class="botao-adicionar" type="submit">
+                <!-- iconezinho para deleção da tarefa/task -->
+                <i class="material-icons" style="color: #FFF;">add</i>
+            </button>
+        </div>
 
-    <div>
         <ul class="lista-tarefas">
             <li class="item-tarefa">
-                <div class="containerTask">
-                    <p>nome do item aki...</p>
-                    <button class="containerRemoveActions">
-                        <p class="descricao-item">Remover/Completar tarefa? </p>
-                        <div class="removeTasksButton">
-                            <!-- iconezinho para deleção da tarefa/task -->
-                            <i id="removeIcon" class="fa-solid fa-minus"></i>
-                        </div>
-                    </button>
-                </div>
+                <p>nome do item aki...</p>
+                <button class="containerRemoveActions">
+                    <!-- iconezinho para deleção da tarefa/task -->
+                    <i class="material-icons" style="color: #ff0000;">delete</i>
+                </button>
             </li>
             <li class="item-tarefa">
-                <div class="containerTask">
-                    <p>nome do item aki...</p>
-                    <button class="containerRemoveActions">
-                        <p class="descricao-item">Remover/Completar tarefa? </p>
-                        <div class="removeTasksButton">
-                            <!-- iconezinho para deleção da tarefa/task -->
-                            <i id="removeIcon" class="fa-solid fa-minus"></i>
-                        </div>
-                    </button>
-                </div>
+                <p>nome do item aki...</p>
+                <button class="containerRemoveActions">
+                    <!-- iconezinho para deleção da tarefa/task -->
+                    <i class="material-icons" style="color: #ff0000;">delete</i>
+                </button>
             </li>
             <li class="item-tarefa">
-                <div class="containerTask">
-                    <p>nome do item aki...</p>
-                    <button class="containerRemoveActions">
-                        <p class="descricao-item">Remover/Completar tarefa? </p>
-                        <div class="removeTasksButton">
-                            <!-- iconezinho para deleção da tarefa/task -->
-                            <i id="removeIcon" class="fa-solid fa-minus"></i>
-                        </div>
-                    </button>
-                </div>
+                <p>nome do item aki...</p>
+                <button class="containerRemoveActions">
+                    <!-- iconezinho para deleção da tarefa/task -->
+                    <i class="material-icons" style="color: #ff0000;">delete</i>
+                </button>
             </li>
         </ul>
     </div>

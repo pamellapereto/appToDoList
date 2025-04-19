@@ -1,29 +1,28 @@
-/* variaveis de cores */
+/* 🎨 Variáveis de cor */
 :root {
     --white: #FFF;
     --gray: #aaa9a9;
     --background: #0c0e10;
+    --red: #FF0000;
 }
 
+/* 🔤 Fonte e base */
 html {
     padding: 0;
     margin: 0;
-    font-family: "Poppings", sans-serif;
-}
-
-body {
+    font-family: "Poppins", sans-serif;
     background-color: var(--background);
 }
 
+/* 🧭 Título */
 .titulo {
     text-align: center;
     color: var(--white);
     font-size: 28px;
-    margin-bottom: 20px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin: 25px 0;
 }
 
+/* 📦 Container do input */
 .container div {
     display: flex;
     align-items: center;
@@ -36,28 +35,50 @@ body {
     width: 100%;
 }
 
+/* ✏️ Campo de tarefa */
 .campo-tarefa {
     width: 100%;
+    height: 25px;
     padding: 12px 50px 12px 15px;
     border-radius: 25px;
     border: none;
     outline: none;
     font-size: 16px;
     background-color: #f2f2f2;
-    height: 25px;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* só para caso de erro visivelmente aparente */
+.campo-tarefa-erro {
+    width: 100%;
+    height: 25px;
+    padding: 12px 50px 12px 15px;
+    border-radius: 25px;
+    border: 3px solid var(--red);
+    outline: none;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#error-input {
+    color: var(--red);
+    position: absolute;
+    left: 15px;
+    font-size: larger;
+}
+
+/* ➕ Botão adicionar */
 .botao-adicionar {
     position: absolute;
     right: 8px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #21c521;
-    border: none;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #21c521;
     color: var(--white);
     cursor: pointer;
     display: flex;
@@ -70,36 +91,89 @@ body {
     background-color: #1aa81a;
 }
 
+/* ✅ Lista de tarefas */
 .lista-tarefas {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
+/* 📋 Item da tarefa */
 .item-tarefa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: var(--gray);
     padding: 10px 15px;
     border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    gap: 15px;
 }
 
-.item-tarefa p {
-    margin: 0;
-    font-size: 16px;
-    color: var(--white);
+/* 🛠 Botões de ação */
+.containerActionBtns {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .containerRemoveActions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0 5px;
 }
 
-.containerRemoveActions i:hover {
-    opacity: 0.7;
+.containerRemoveActions img {
+    width: 25px;
+    height: 25px;
+    transition: opacity 0.2s ease;
 }
+
+.containerRemoveActions img:hover {
+    opacity: 0.6;
+}
+
+/* 📝 Texto da tarefa */
+.item-tarefa p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: var(--background);
+}
+
+/* Animaçõzinha pra quando deletar a task */
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  }
+  
+  .remove-animation {
+    animation: fadeOut 0.4s forwards;
+  }
+
+/* Animação só oposta pra quando adicionar uma nova task */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .add-animation {
+    animation: fadeIn 0.4s forwards;
+  }

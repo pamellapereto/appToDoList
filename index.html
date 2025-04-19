@@ -17,6 +17,11 @@
 
     <!-- iconezinho na pagina só pra deixar mais bonitinho msm -->
     <link rel="shortcut icon" type="imagex/png" href="./assets/images/icone-pagina-lista.png">
+
+    <!-- linkando o script com defer para nn ficar feio no final da pagina -->
+    <script src="./js/script.js" defer></script>
+
+    <!-- titulo da pagina -->
     <title>To-Do List</title>
 </head>
 
@@ -25,36 +30,21 @@
     <!-- campos para adicionar nova tarefa -->
     <div class="container">
         <div class="container-input">
-            <input placeholder="Nova Tarefa" class="campo-tarefa" type="text">
-            <button class="botao-adicionar" type="submit">
+
+            <!-- Input para adicionar a task nova ao to-do list -->
+            <input id="input" placeholder="Nova Tarefa" class="campo-tarefa" type="text">
+
+            <!-- <p id="error-input">Digite um título para a nova tarefa</p> -->
+
+            <!-- Botão com icone de + para adição de tasks -->
+            <button id="addButton" class="botao-adicionar" type="submit">
                 <!-- iconezinho para deleção da tarefa/task -->
                 <i class="material-icons" style="color: #FFF;">add</i>
             </button>
         </div>
 
-        <ul class="lista-tarefas">
-            <li class="item-tarefa">
-                <p>nome do item aki...</p>
-                <button class="containerRemoveActions">
-                    <!-- iconezinho para deleção da tarefa/task -->
-                    <i class="material-icons" style="color: #ff0000;">delete</i>
-                </button>
-            </li>
-            <li class="item-tarefa">
-                <p>nome do item aki...</p>
-                <button class="containerRemoveActions">
-                    <!-- iconezinho para deleção da tarefa/task -->
-                    <i class="material-icons" style="color: #ff0000;">delete</i>
-                </button>
-            </li>
-            <li class="item-tarefa">
-                <p>nome do item aki...</p>
-                <button class="containerRemoveActions">
-                    <!-- iconezinho para deleção da tarefa/task -->
-                    <i class="material-icons" style="color: #ff0000;">delete</i>
-                </button>
-            </li>
-        </ul>
+        <!-- Lista de tasks aonde vai ser adicionado todas as novas tasks -->
+        <ul id="list" class="lista-tarefas"></ul>
     </div>
 </body>
 

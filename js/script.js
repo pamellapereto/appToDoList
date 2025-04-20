@@ -12,6 +12,8 @@ addButton.addEventListener('click', () => {
     // Mostra uma borda vermelha caso o usuario tente criar uma nv task sem nome
     if (input.value === '' || input.value === null) {
         input.classList.add('campo-tarefa-erro');
+        input.classList.add('placeholderErro');
+        input.placeholder = "Digite o nome da nova tarefa";
         input.focus();
         return;
     }   
@@ -58,6 +60,8 @@ addButton.addEventListener('click', () => {
 input.addEventListener('input', () => {
     if (input.classList.contains('campo-tarefa-erro') && input.value.trim() !== '') {
         input.classList.remove('campo-tarefa-erro');
+        input.classList.add('placeholder');
+        input.placeholder = "Nova tarefa";
     }
 }); 
 

@@ -1,4 +1,4 @@
-/* 🎨 Variáveis de cor */
+/* Variáveis de cor */
 :root {
     --white: #FFF;
     --gray: #aaa9a9;
@@ -14,7 +14,7 @@ html {
     background-color: var(--background);
 }
 
-/* 🧭 Título */
+/* Título */
 .titulo {
     text-align: center;
     color: var(--white);
@@ -22,7 +22,7 @@ html {
     margin: 25px 0;
 }
 
-/* 📦 Container do input */
+/* Container do input */
 .container div {
     display: flex;
     align-items: center;
@@ -35,7 +35,7 @@ html {
     width: 100%;
 }
 
-/* ✏️ Campo de tarefa */
+/* Campo de tarefa */
 .campo-tarefa {
     width: 100%;
     height: 25px;
@@ -69,6 +69,10 @@ html {
     color: var(--red);
 }
 
+.placeholder::placeholde {
+    color: var(--gray);
+}
+
 #error-input {
     color: var(--red);
     position: absolute;
@@ -76,7 +80,7 @@ html {
     font-size: larger;
 }
 
-/* ➕ Botão adicionar */
+/* Botão adicionar */
 .botao-adicionar {
     position: absolute;
     right: 8px;
@@ -99,14 +103,14 @@ html {
     background-color: #1aa81a;
 }
 
-/* ✅ Lista de tarefas */
+/* Lista de tarefas */
 .lista-tarefas {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-/* 📋 Item da tarefa */
+/* Item da tarefa */
 .item-tarefa {
     display: flex;
     align-items: center;
@@ -119,7 +123,38 @@ html {
     gap: 15px;
 }
 
-/* 🛠 Botões de ação */
+.containerInfos {
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-checkbox {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .custom-checkbox input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .custom-checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+    display: inline-block;
+    transition: 0.3s;
+  }
+  
+  .custom-checkbox input:checked + .checkmark {
+    background-color: #21c521; /* Aqui muda quando checado */
+  }
+  
+
+/* Botões de ação */
 .containerActionBtns {
     display: flex;
     align-items: center;
@@ -146,7 +181,7 @@ html {
     opacity: 0.6;
 }
 
-/* 📝 Texto da tarefa */
+/* Texto da tarefa */
 .item-tarefa p {
     margin: 0;
     padding: 0;

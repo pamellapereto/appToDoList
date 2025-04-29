@@ -1,51 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- só para dar mais vida colocando icones de exclusão e adição para as tarefas -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Font de textos para tirar a serifa deles e deixar mais bonitinha -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-    <!-- iconezinho na pagina só pra deixar mais bonitinho msm -->
-    <link rel="shortcut icon" type="imagex/png" href="./assets/images/icone-pagina-lista.png">
-
-    <!-- linkando o script com defer para nn ficar feio no final da pagina -->
-    <script src="./js/script.js" defer></script>
-
-    <!-- titulo da pagina -->
-    <title>To-Do List</title>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link para o Font Awesome -->
 </head>
-
 <body>
-    <h1 class="titulo">To-Do List</h1>
-    <!-- campos para adicionar nova tarefa -->
-    <div class="container">
-        <div class="container-input">
-
-            <!-- Input para adicionar a task nova ao to-do list -->
-            <input id="input" placeholder="Nova Tarefa" class="campo-tarefa placeholder" type="text">
-
-            <!-- <p id="error-input">Digite um título para a nova tarefa</p> -->
-
-            <!-- Botão com icone de + para adição de tasks -->
-            <button id="addButton" class="botao-adicionar" type="submit">
-                <!-- iconezinho para deleção da tarefa/task -->
-                <i class="material-icons" style="color: #FFF;">add</i>
-            </button>
-        </div>
-
-        <!-- Lista de tasks aonde vai ser adicionado todas as novas tasks -->
-        <ul id="list" class="lista-tarefas"></ul>
-    </div>
+    <h1 class="titulo"> Minha Lista de Tarefas</h1>
+ 
+    <form>
+    <input class = "campo-tarefa" type = "text" placeholder="Digite uma tarefa"> <!-- Campo de texto para digitar a tarefa -->
+    <button class ="botao-adicionar" type="submit">Adicionar</button> <!-- Botão para adicionar a tarefa -->
+    </form>
+ 
+    <ul class="lista-tarefas"> <!-- Lista de tarefas -->
+        <li class="item-tarefa"> Tarefa 1
+            <div class = acoes> <!-- Ações para a tarefa 1 -->
+        <button class="botao-editar">Editar</button> <!-- Botão para editar a tarefa -->
+        <button class="botao-remover">Remover</button>
+        </div> <!-- Ações para a tarefa 1 -->
+        </li> <!-- Tarefa 1 -->
+ 
+        <li class="item-tarefa"> Tarefa 2
+            <div class = acoes>
+        <button class="botao-editar">Editar</button>
+        <button class="botao-remover">Remover</button>
+        </div> <!-- Ações para a tarefa 2 -->
+        </li> <!-- Tarefa 2 -->
+           
+           
+    </ul>
+    <script src="js/script.js"></script> <!-- Link para o arquivo JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Link para o jQuery -->
+ 
+ 
 </body>
-
 </html>

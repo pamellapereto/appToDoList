@@ -1,222 +1,89 @@
-/* Variáveis de cor */
-:root {
-    --white: #FFF;
-    --gray: #aaa9a9;
-    --background: #0c0e10;
-    --red: #FF0000;
+/* Estilo geral do corpo */
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
 }
-
-/* 🔤 Fonte e base */
-html {
-    padding: 0;
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background-color: var(--background);
-}
-
 /* Título */
 .titulo {
-    text-align: center;
-    color: var(--white);
-    font-size: 28px;
-    margin: 25px 0;
+  text-align: center;
+  font-size: 2em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #333;
+  margin-bottom: 20px;
 }
-
-/* Container do input */
-.container div {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.container-input {
-    position: relative;
-    width: 100%;
-}
-
+ 
 /* Campo de tarefa */
 .campo-tarefa {
-    width: 100%;
-    height: 25px;
-    padding: 12px 50px 12px 15px;
-    border-radius: 25px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    background-color: #f2f2f2;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 60%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-
-.placeholder::placeholder {
-    color: var(--gray);
-}
-
-/* só para caso de erro visivelmente aparente */
-.campo-tarefa-erro {
-    width: 100%;
-    height: 25px;
-    padding: 12px 50px 12px 15px;
-    border-radius: 25px;
-    border: 3px solid var(--red);
-    outline: none;
-    font-size: 16px;
-    background-color: #f2f2f2;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.placeholderErro::placeholder {
-    color: var(--red);
-}
-
-.placeholder::placeholde {
-    color: var(--gray);
-}
-
-#error-input {
-    color: var(--red);
-    position: absolute;
-    left: 15px;
-    font-size: larger;
-}
-
-/* Botão adicionar */
+ 
+/* Botão de adicionar */
 .botao-adicionar {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    background-color: #21c521;
-    color: var(--white);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s ease;
+  background-color: #009297;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
+ 
 .botao-adicionar:hover {
-    background-color: #1aa81a;
+  background-color: #01595c;
 }
-
+ 
 /* Lista de tarefas */
 .lista-tarefas {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
 }
-
-/* Item da tarefa */
+ 
+/* Item da lista */
 .item-tarefa {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--gray);
-    padding: 10px 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    gap: 15px;
+  background-color: #d4d4d4;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-.containerInfos {
-    justify-content: center;
-    align-items: center;
+ 
+/* Botão de remover */
+.botao-remover {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
-.custom-checkbox {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-  }
-  
-  .custom-checkbox input[type="checkbox"] {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .custom-checkbox .checkmark {
-    width: 20px;
-    height: 20px;
-    background-color: #eee;
-    border-radius: 4px;
-    display: inline-block;
-    transition: 0.3s;
-  }
-  
-  .custom-checkbox input:checked + .checkmark {
-    background-color: #21c521; /* Aqui muda quando checado */
-  }
-  
-
-/* Botões de ação */
-.containerActionBtns {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+ 
+.botao-remover:hover {
+  background-color: #a71d2a;
 }
-
-.containerRemoveActions {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0 5px;
+ 
+/* Botão de editar */
+.botao-editar {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+ 
 }
-
-.containerRemoveActions img {
-    width: 25px;
-    height: 25px;
-    transition: opacity 0.2s ease;
+ 
+.botao-editar:hover {
+  background-color: #0056b3;
 }
-
-.containerRemoveActions img:hover {
-    opacity: 0.6;
-}
-
-/* Texto da tarefa */
-.item-tarefa p {
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    color: var(--background);
-}
-
-/* Animaçõzinha pra quando deletar a task */
-@keyframes fadeOut {
-    from {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    to {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-  }
-  
-  .remove-animation {
-    animation: fadeOut 0.4s forwards;
-  }
-
-/* Animação só oposta pra quando adicionar uma nova task */
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  .add-animation {
-    animation: fadeIn 0.4s forwards;
-  }
+ 
+ 
+ 
+ 

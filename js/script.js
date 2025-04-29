@@ -8,7 +8,7 @@ let task;
 
 const btnExcluirList = document.querySelector('.containerRemoveActions');
 
-input.focus();
+input.focus(); 
 list.innerHTML = '';
 
 addButton.addEventListener('click', () => {

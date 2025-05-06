@@ -32,28 +32,30 @@ function renderizarTarefas(){
 
 
        //adiciona o botão (clique) de remover a tarefa
-       botaoRemover.addEventListener("click", function(i) {
-        tarefas.splice(i, 1); //remove a tarefa do array
-        renderizarTarefas(); //atualiza a lista de tarefas
+       botaoRemover.addEventListener("click", 
+        
+        function(i) {
+            tarefas.splice(i, 1); //remove a tarefa do array
+            renderizarTarefas(); //atualiza a lista de tarefas
         }
     );
 
      itemLista.appendChild(botaoRemover); //adiciona o botão de remover a tarefa
-     listaTarefas.appendChild(itemLista); //adiciona a tarefa na lista de tarefas
+     listaTarefas.appendChild(itemLista); //adiciona a tarefa (li) na lista de tarefas (ul)
     }
 }
  
     // Evento para adicionar a tarefa
-   botaoAdicionar.addEventListener("click", function(event) {
-        event.preventDefault(); //previne o comportamento padrão do botão
+   botaoAdicionar.addEventListener("click", 
+    
+    function(evento) {
+        evento.preventDefault(); //previne o comportamento padrão do botão
         
         const novaTarefa = inputTarefa.value.trim(); //pega o valor do input
        
         if (novaTarefa !== "") { //verifica se o campo não está vazio
             tarefas.push(novaTarefa); //adiciona a tarefa no array
-            console.log(tarefas); //exibe o array no console
             inputTarefa.value = ""; //limpa o campo de texto
             renderizarTarefas(); //atualiza a lista de tarefas
         }
-    
     });

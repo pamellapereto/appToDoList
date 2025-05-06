@@ -39,6 +39,7 @@ body {
  
 /* Lista de tarefas */
 .lista-tarefas {
+  background-color: #007bff;
   list-style: none;
   padding: 0;
   margin-top: 20px;

@@ -12,7 +12,7 @@ function renderizarTarefas(){
     listaTarefas.innerHTML = "";
  
     //para percorrer o array com as tarefas alocadas e posicionadas na tela (i)
-    for (var i = 0; i < tarefas.length; i++){
+    for (let i = 0; i < tarefas.length; i++){
         const tarefaTexto = tarefas[i]; //texto da tarefa é o valor do array
 
         //cria um elemento li para cada tarefa
@@ -33,18 +33,34 @@ function renderizarTarefas(){
 
        //adiciona o botão (clique) de remover a tarefa
        botaoRemover.addEventListener("click", 
-        
         function(i) {
             tarefas.splice(i, 1); //remove a tarefa do array
             renderizarTarefas(); //atualiza a lista de tarefas
-        }
-    );
+        });
+
+
+        //adicionar o botão (clique) para editar a tarefa
+        botaoEditar.addEventListener("click", function() {
+                editarTarefa(i); //chama a função para editar a tarefa
+        }); 
+    
 
      itemLista.appendChild(botaoRemover); //adiciona o botão de remover a tarefa
+     itemLista.appendChild(botaoEditar); //adiciona o botão de editar a tarefa
      listaTarefas.appendChild(itemLista); //adiciona a tarefa (li) na lista de tarefas (ul)
     }
 }
  
+     //Função para editar uma tarefa
+        function editarTarefa(i) {
+                const tarefaAtualizada = prompt("Editar tarefa: ", tarefas[i]);
+                if (tarefaAtualizada !== null && tarefaAtualizada.trim() !== "") {
+                    tarefas[i] = tarefaAtualizada; //atualiza a tarefa no array
+                    console.log(tarefas[i]);
+                    renderizarTarefas(); //atualiza a lista de tarefas
+                }
+            }
+
     // Evento para adicionar a tarefa
    botaoAdicionar.addEventListener("click", 
     

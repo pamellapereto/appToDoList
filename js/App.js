@@ -1,6 +1,6 @@
 //Array para armazenar as tarefas
 let tarefas = [];
-
+""
 const inputTarefa = document.querySelector(".campo-tarefa"); //<input>
 const botaoAdicionar = document.querySelector(".botao-adicionar"); //<button>
 const listaTarefas = document.querySelector(".lista-tarefas"); //<ul>
@@ -63,7 +63,6 @@ function renderizarTarefas(){
 
     // Evento para adicionar a tarefa
    botaoAdicionar.addEventListener("click", 
-    
     function(evento) {
         evento.preventDefault(); //previne o comportamento padrão do botão
         

@@ -1,5 +1,6 @@
 const urlAPI = "http://localhost:3000/tarefas";
 
+
 /*Seleciona cada elemento do DOM (Document Object Model) presente
 na página HTML para manipulá-la
 
@@ -27,16 +28,23 @@ async function renderizarTarefas() {
             itemLista.className = 'item-tarefa';
             itemLista.textContent = tarefa.titulo;
 
-            /*Botão remover criado para cada item da lista, isto é, para cada tarefa da lista
-            OBSERVAÇÃO: AINDA NÃO ESTÁ FUNCIONAL*/
+            /*Botão remover criado para cada item da lista, isto é, para cada tarefa da lista*/
             const botaoRemover = document.createElement('button');
             botaoRemover.className = 'botao-remover';
             botaoRemover.textContent = 'Excluir';
+
+            botaoRemover.addEventListener("click", () => 
+                removerTarefa(tarefa.id)
+            );
 
             /*Botão editar criado para editar cada item da lista -> AINDA NÃO FUNCIONAL*/
             const botaoEditar = document.createElement('button');
             botaoEditar.className = 'botao-editar';
             botaoEditar.textContent = 'Editar';
+
+            botaoEditar.addEventListener("click", () => {
+                editarTarefa(tarefa.id, tarefa.titulo);
+            })
 
             itemLista.appendChild(botaoRemover);
             itemLista.appendChild(botaoEditar);
@@ -54,6 +62,9 @@ async function renderizarTarefas() {
 
 /*Função assíncrona para adicionar uma nova tarefa à lista de tarefas*/
 async function adicionarTarefa(titulo) {
+    //Limpa o elemento ul (listaTarefas)
+    listaTarefas.innerHTML = "";
+
     try {
         await fetch(urlAPI, {
             method: "POST",
@@ -73,6 +84,55 @@ async function adicionarTarefa(titulo) {
         console.error("Erro ao adicionar tarefa:", erro);
     }
 }
+
+/*Função para editar tarefa*/
+async function editarTarefa(id, tituloAtual) {
+    const novoTitulo = prompt('Editar tarefa:', tituloAtual);
+
+    //Se um novo título for digitado e ele for diferente de vazio
+    if (novoTitulo && novoTitulo.trim() !== "") {
+        try {
+            await fetch(`${urlAPI}/${id}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    titulo: novoTitulo
+                })
+            });
+            renderizarTarefas();
+        } catch (erro) {
+            console.error("Erro ao editar tarefa", erro);
+        }
+    }
+}
+
+
+/*Função para remover a tarefa*/
+async function removerTarefa(id) {
+    listaTarefas.innerHTML = "";
+    try {
+        await fetch(`${urlAPI}/${id}`, {
+            method: "DELETE"
+        });
+        renderizarTarefas();
+    }
+    catch (erro) {
+        console.error("Erro ao deletar tarefa: ", erro);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 /*Evento listener para o botão de adicionar tarefa, para que seja monitorado
 o clique do usuário no botão*/
 

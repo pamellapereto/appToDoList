@@ -87,7 +87,8 @@ async function adicionarTarefa(titulo) {
 
 /*Função para editar tarefa*/
 async function editarTarefa(id, tituloAtual) {
-    const novoTitulo = prompt('Editar tarefa:', tituloAtual);
+    listaTarefas.innerHTML = "";
+    const novoTitulo = prompt('Editar título:', tituloAtual);
 
     //Se um novo título for digitado e ele for diferente de vazio
     if (novoTitulo && novoTitulo.trim() !== "") {

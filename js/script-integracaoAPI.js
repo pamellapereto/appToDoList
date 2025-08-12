@@ -87,7 +87,6 @@ async function adicionarTarefa(titulo) {
 
 /*Função para editar tarefa*/
 async function editarTarefa(id, tituloAtual) {
-    listaTarefas.innerHTML = "";
     const novoTitulo = prompt('Editar título:', tituloAtual);
 
     //Se um novo título for digitado e ele for diferente de vazio
@@ -102,6 +101,7 @@ async function editarTarefa(id, tituloAtual) {
                     titulo: novoTitulo
                 })
             });
+            listaTarefas.innerHTML = "";
             renderizarTarefas();
         } catch (erro) {
             console.error("Erro ao editar tarefa", erro);
